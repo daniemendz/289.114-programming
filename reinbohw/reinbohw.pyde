@@ -28,7 +28,7 @@ stroke(180, 100, 100)
 strokeWeight(35)
 ellipse(250,250 , 270,270)
 
-#bleu
+#ind
 stroke(260, 100, 100)
 strokeWeight(25)
 ellipse(250,250 , 225,225)
