@@ -90,3 +90,15 @@ vertex(710,270)
 bezierVertex(580,340, 600,540, 750,590)
 vertex(800,400)
 endShape(CLOSE)
+
+#R symbol
+font = createFont('AndaleMono.ttf', 55)
+textFont(font)
+textSize(55)
+fill('#000000')
+text('R', 690,760)
+#circle
+noFill()
+stroke('#000000')
+strokeWeight(5)
+ellipse(706,741, 65,65)
