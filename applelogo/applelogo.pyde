@@ -4,7 +4,7 @@ background('#004477')
 #image(loadImage('apple.png'), 0,0)
 noStroke()
 
-
+#colours
 #blu
 beginShape()
 fill('#009edf')
@@ -63,10 +63,30 @@ vertex(0,800)
 vertex(800,800)
 vertex(800,0)
 vertex(0,0)
+#apple
 beginContour()
 vertex(400,750)
 bezierVertex(320,750, 280,820, 190,740)
 bezierVertex(110,680, 60,560, 55,490)
 bezierVertex(40,260, 160,195, 260,195)
+bezierVertex(320,195, 330,230, 400,230)
+bezierVertex(470,230, 480,195, 540,195)
+bezierVertex(640,195, 760,260,  745,490)
+bezierVertex(740,560, 690,680, 610,740)
+bezierVertex(520,820, 480,750, 400,750)
+endContour()
+#leaf
+beginContour()
+vertex(380,200)
+bezierVertex(380,100, 430,20, 530,10)
+bezierVertex(530,110, 480,190, 380,200)
 endContour()
 endShape() 
+
+#bite
+beginShape()
+fill('#ffffff')
+vertex(710,270)
+bezierVertex(580,340, 600,540, 750,590)
+vertex(800,400)
+endShape(CLOSE)
