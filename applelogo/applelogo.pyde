@@ -60,7 +60,7 @@ beginContour()
 stroke('#ffffff')
 vertex(400,750)
 bezierVertex(320,750, 280,820, 190,740)
-bezierVertex
+bezierVertex(110,680, 60,560, 55,490)
 endContour()
 #fill('#ffffff')
 noFill()
