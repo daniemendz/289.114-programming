@@ -9,9 +9,12 @@ print(name == "Jo")
 print(name != "em")
 '''
 
-mark = 5
+mark = 80
 
-if mark >= 80:
+if mark < 0 or mark > 100:
+    print("Invalid Mark")
+
+elif mark >= 80:
     print('A')
 
 elif mark >= 65:
