@@ -6,19 +6,7 @@ noStroke()
 #quad(40,40, 40,90, 90,90, 90,40) 
 #     x1 y1  x2 y2  x3 y3  x4 y4  Anticlockwise from top left
 #squares 45px wide, 20px space, 545 max initial
-'''
-x1 = 40
-y1 = 40
 
-x2 = 40
-y2 = 85
-
-x3 = 85
-y3 = 85
-
-x4 = 85
-y4 = 40
-'''
 
 x1 = y1 = x2 = y4 = 40
 y2 = x3 = y3 = x4 = 85
