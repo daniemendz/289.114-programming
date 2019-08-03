@@ -1,3 +1,4 @@
+randomSeed(213) #optional, but determines what the 'random' output lookslike
 size(600,600)
 background('#004477')
 noFill()
@@ -12,5 +13,5 @@ print(x)
 print( int(x) )
 '''
 
-for i in range(100):
-    point( random(width), height/2 )
+for i in range(1000):
+    point( random(width), random(height) )
