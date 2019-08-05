@@ -14,13 +14,28 @@ def draw():
     rotate(-PI/2)
     
     #hour hand
+    pushMatrix() #rotate() inside matrix are onoly applicable in it 
     strokeWeight(10)
     print(hour() )
     h = TAU/12*hour()
     rotate(h)
     line(0,0, 100,0)
+    popMatrix()
     
+    #minute hand
+    pushMatrix()
+    strokeWeight(5)
+    m= TAU/60*minute()
+    rotate(m)
+    line(0,0, 130,0)
+    popMatrix()
     
+    #second hand
+    pushMatrix()
+    strokeWeight(2)
+    s= TAU/60*second()
+    rotate(s)
+    line(0,0, 150,0)
+    popMatrix()
     
-
     
