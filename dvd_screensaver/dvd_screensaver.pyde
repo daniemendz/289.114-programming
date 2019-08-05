@@ -1,8 +1,7 @@
 logo = None #empty variable
 x = 0
 y = 0
-xspeed = 2
-yspeed = 2
+xspeed = yspeed = 2
 xd = 1
 
 
