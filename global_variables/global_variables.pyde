@@ -12,3 +12,5 @@ def draw():
     y += 1
     ellipse(height/2,y, 47,47)
     
+    if frameCount%100 ==0:
+        saveFrame()
