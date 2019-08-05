@@ -11,10 +11,10 @@ def draw():
     strokeWeight(3)
     ellipse(0,0, 350,350)
     
-    rotate(-PI/2)
+    rotate(-PI/2) #transforms before matrix are essentially globals
     
     #hour hand
-    pushMatrix() #rotate() inside matrix are onoly applicable in it 
+    pushMatrix() #transforms inside matrix are only applicable in it 
     strokeWeight(10)
     print(hour() )
     h = TAU/12*hour()
