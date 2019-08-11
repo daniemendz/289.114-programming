@@ -1,6 +1,6 @@
 theta = 0
 radius = 1
-s = 200 #scale variable
+s = 40 #scale variable
 
 def setup():
     size(600,600)
@@ -21,12 +21,13 @@ def draw():
     
     line(0,0, x*s, y*s)
     
-    ellipse( -height/2+40,y*s, 3,3)
-    ellipse(x*s*1, -width/2+40, 3,3)
-    
+    pushMatrix()
+
+    #ellipse(x*s*1, -width/2+40, 3,3)
+    ellipse(0, y*s*1-100, 3,3)
     strokeWeight(1)
-    line(-height/2+40,y*s, x*s, y*s)
-    line(x*s,-width/2+40, x*s, y*s)
+    #line(x*s,-width/2+40, x*s, y*s)
+    popMatrix()
     
     theta += 0.1
     
