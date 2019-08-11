@@ -11,7 +11,9 @@ def setup():
 def draw():
     global theta
     background('#004477')
-    translate(width/2, height/2)
+    
+    pushMatrix()
+    translate(width/4+width/2, height/2)
     diameter = radius*s*2
     strokeWeight(3)
     ellipse(0,0, diameter,diameter)
@@ -28,6 +30,7 @@ def draw():
     
     quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
     line(-25,y*s*1-120, 25,y*s*1-120 )
+    popMatrix()
 
     
     
