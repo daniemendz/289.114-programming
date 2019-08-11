@@ -20,6 +20,7 @@ def draw():
     
     x = cos(theta)
     y = sin(theta)
+    z = -cos(theta)
     
     line(0,0, x*s, y*s)
 
@@ -34,16 +35,16 @@ def draw():
 
     pushMatrix()
     translate(width/4-80, height/2)
-    line(0, y*s*1-100, 0, y*s*1-0)
-    quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
-    line(-25,y*s*1-120, 25,y*s*1-120)
+    line(0, z*s*1-100, 0, z*s*1-0)
+    quad(-25,z*s*1-130, 25,z*s*1-130, 25,z*s*1-90, -25,z*s*1-90)
+    line(-25,z*s*1-120, 25,z*s*1-120)
     popMatrix()
     
     pushMatrix()
     translate(width/4, height/2)
-    line(0, y*s*1-100, 0, y*s*1-0)
-    quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
-    line(-25,y*s*1-120, 25,y*s*1-120)
+    line(0, x*s*1-100, 0, x*s*1-0)
+    quad(-25,x*s*1-130, 25,x*s*1-130, 25,x*s*1-90, -25,x*s*1-90)
+    line(-25,x*s*1-120, 25,x*s*1-120)
     popMatrix()
     
     pushMatrix()
@@ -52,8 +53,6 @@ def draw():
     quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
     line(-25,y*s*1-120, 25,y*s*1-120)
     popMatrix()
-    
-    
-    
+
     theta += 0.1
     
