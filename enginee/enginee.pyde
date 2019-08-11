@@ -20,14 +20,18 @@ def draw():
     y = sin(theta)
     
     line(0,0, x*s, y*s)
-    
-    pushMatrix()
 
     #ellipse(x*s*1, -width/2+40, 3,3)
     ellipse(0, y*s*1-100, 3,3)
-    strokeWeight(1)
-    #line(x*s,-width/2+40, x*s, y*s)
-    popMatrix()
+    line(0,y*s*1-100, x*s, y*s)
+    
+    
+    quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
+    line(-25,y*s*1-120, 25,y*s*1-120 )
+
+    
+    
+    
     
     theta += 0.1
     
