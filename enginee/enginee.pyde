@@ -29,10 +29,29 @@ def draw():
     
     
     quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
-    line(-25,y*s*1-120, 25,y*s*1-120 )
+    line(-25,y*s*1-120, 25,y*s*1-120)
     popMatrix()
 
+    pushMatrix()
+    translate(width/4-80, height/2)
+    line(0, y*s*1-100, 0, y*s*1-0)
+    quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
+    line(-25,y*s*1-120, 25,y*s*1-120)
+    popMatrix()
     
+    pushMatrix()
+    translate(width/4, height/2)
+    line(0, y*s*1-100, 0, y*s*1-0)
+    quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
+    line(-25,y*s*1-120, 25,y*s*1-120)
+    popMatrix()
+    
+    pushMatrix()
+    translate(width/4+80, height/2)
+    line(0, y*s*1-100, 0, y*s*1-0)
+    quad(-25,y*s*1-130, 25,y*s*1-130, 25,y*s*1-90, -25,y*s*1-90)
+    line(-25,y*s*1-120, 25,y*s*1-120)
+    popMatrix()
     
     
     
