@@ -18,9 +18,6 @@ coffees = [
 ]
 
 for coffee in coffees:
-    coffee['hotwater']
-    coffee['steamedmilk']
-    coffee['foamedmilk']
 
     x = width/4*col
     y = height/4*row
