@@ -1,0 +1,3 @@
+size(800,800)
+background('#004477')
+noStroke()
