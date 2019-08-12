@@ -20,10 +20,39 @@ for i in range(len(bands)):
 
 # 2 dimensional
 bands = [
-  [100, 0, 0],
-  [100, 60, 0],
-  [100, 100, 0],
-  [0, 100, 0],
-  [0, 60, 100],
-  [40, 20, 100]
+  [100, 0, 0, 'red'],
+  [100, 60, 0, 'orange'],
+  [100, 100, 0, 'yellow'],
+  [0, 100, 0, 'green'],
+  [0, 60, 100, 'blue'],
+  [40, 20, 100, 'purple']
 ]
+
+colorMode(RGB, 100)
+
+for i in range(len(bands)):
+    r = bands[i][0]
+    g = bands[i][1]
+    b = bands[i][2]
+    
+    
+    #grayscale
+    sum = r + g + b 
+    avg = sum/3
+    fill(avg, avg, avg)
+    rect(50,i*h, 40,h)
+    
+    #red
+    fill('#FF0000')
+    rect(100,i*h,r,h)
+    
+    #green
+    fill('#00FF00')
+    rect(100+r,i*h,g,h)
+    
+    #blue
+    fill('#0000FF')
+    rect(100+r+g,i*h,b,h)
+    
+    fill('#ffffff')
+    text(bands[i][3], -60, i*h+30)
