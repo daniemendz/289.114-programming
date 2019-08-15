@@ -12,7 +12,7 @@ for i in range(1,len(csv)):
     sales = entry[1]
     title = entry[2]
 
-    fscale = float(800)/float(170000000)
+    fscale = float(width)/float(170000000)
     fwidth = float(fscale)*float(sales)
     
     if colourPick > 5:
