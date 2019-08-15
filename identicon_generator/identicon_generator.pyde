@@ -1,23 +1,20 @@
 size(500,500)
 noStroke()
 
-colourPick = 0
+colour = ['#ff8282', '#5efec3', '#63faea', '#7589ff', '#bfa3ff']
+bgcolour = ['#ffffff', '#000000']
 
-for i in range(1):
+for i in range(7):
     
-    if colourPick%2 == 0:
-        background('#ffffff')
-    else:
-        background('#000000')
-    
+    colourPick = int(random(len(colour)))
+    bgcolPick = int(random(len(bgcolour)))
+     
     if colourPick > 5:
         colourPick = 0 
         
-    colour = ['#ff8282', '#63faea', '#5efec3', '#7f2e1e', '#bfa3ff', '#7589ff']
+    background(bgcolour[bgcolPick])
     fill(colour[colourPick])
     rect(0,0, 500,16)
     
-    
-    colourPick += 1
         
     
