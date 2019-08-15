@@ -14,8 +14,7 @@ for i in range(1,len(csv)):
 
     fscale = float(800)/float(170000000)
     fwidth = float(fscale)*float(sales)
-
-    print(fwidth)
+    #print(fwidth)
     
     if colourPick > 5:
         colourPick = 0 
