@@ -14,7 +14,6 @@ for i in range(1,len(csv)):
 
     fscale = float(800)/float(170000000)
     fwidth = float(fscale)*float(sales)
-    #print(fwidth)
     
     if colourPick > 5:
         colourPick = 0 
@@ -22,6 +21,10 @@ for i in range(1,len(csv)):
     colour = ['#ff0000', '#ff9900', '#ffff00', '#00ff00', '#0099ff', '#6633ff']
     fill(colour[colourPick])
     rect(0,col*16, fwidth,16)
+    
+    fill('#000000')
+    textSize(14)
+    text(title, 5,13+col*16)
     
     col +=1
     colourPick +=1
