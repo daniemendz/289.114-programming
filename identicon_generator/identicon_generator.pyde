@@ -90,8 +90,8 @@ dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y = dEL_x-50,dEL_y-50, dER_x-50,dER_y-50, dM_x
 
 print(dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y)
 
-imgELlist = ['dEL1.png']
-imgERlist = ['dER1.png']
+imgELlist = ['dEL1.png','dEL2.png']
+imgERlist = ['dER1.png','dER2.png']
 #imgMlist = ['']
 
 imgEL = loadImage(imgELlist[int(random(len(imgELlist)))])
