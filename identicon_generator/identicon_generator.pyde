@@ -89,3 +89,13 @@ if mouth == 0: #add white square if none detected
 dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y = dEL_x-50,dEL_y-50, dER_x-50,dER_y-50, dM_x-50,dM_y-50
 
 print(dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y)
+
+imgELlist = ['dEL1.png']
+imgERlist = ['dER1.png']
+#imgMlist = ['']
+
+imgEL = loadImage(imgELlist[int(random(len(imgELlist)))])
+image(imgEL, dEL_x,dEL_y)
+
+imgER = loadImage(imgERlist[int(random(len(imgERlist)))])
+image(imgER, dER_x,dER_y)
