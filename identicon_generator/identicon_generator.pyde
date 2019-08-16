@@ -66,9 +66,9 @@ if righteye == 0: #add white square if none detected
 #mouth position
 mouth = 0
 for i in range(20): #detects white squares
-    dM_xco = [150, 250, 350, 450]
+    dM_xco = [150, 250, 350]
     dM_yco = [350, 450]
-    dM_x = dM_xco[int(random(0,4))]
+    dM_x = dM_xco[int(random(0,3))]
     dM_y = dM_yco[int(random(0,2))]
     detMouth = get(dM_x,dM_y)
     detMouth2 = get(dM_x+100, dM_y)
@@ -86,5 +86,6 @@ if mouth == 0: #add white square if none detected
     
 
 #place drawings
+dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y = dEL_x-50,dEL_y-50, dER_x-50,dER_y-50, dM_x-50,dM_y-50
 
-    
+print(dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y)
