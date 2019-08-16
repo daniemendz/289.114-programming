@@ -8,7 +8,7 @@ col = 0
 row = 0
 colourPick = int(random(len(colour)))
 
-for i in range(64):
+for i in range(36):
     
     bgcolPick = int(random(len(bgcolour)))
     
@@ -16,18 +16,21 @@ for i in range(64):
         colourPick = 0 
     
     fill(bgcolour[bgcolPick])
-    rect(row*75,col*75, 75,75)
+    rect(row*100,col*100, 100,100)
     
     fill(colour[colourPick])
     
-    if int(random(2)) == 1:
-        rect(row*75,col*75, 20,75)
-    else:
-        rect(row*75,col*75, 75,20)
+    rec = int(random(4))
+    
+    if colourPick == 1 and rec == 1:
+        rect(row*100,col*100, 20,100)
+    elif rec == 2:
+        rect(row*100,col*100, 100,20)
+
     
     row += 1
     
-    if row%8==0:
+    if row%6==0:
         row = 0
         col += 1
     
