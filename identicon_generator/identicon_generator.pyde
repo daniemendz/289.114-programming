@@ -88,8 +88,6 @@ if mouth == 0: #add white square if none detected
 #place drawings
 dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y = dEL_x-50,dEL_y-50, dER_x-50,dER_y-50, dM_x-50,dM_y-50
 
-print(dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y)
-
 imgELlist = ['dEL1.png','dEL2.png','dEL3.png']
 imgERlist = ['dER1.png','dER2.png','dER3.png']
 imgMlist = ['dM1.png','dM2.png','dM3.png','dM4.png']
