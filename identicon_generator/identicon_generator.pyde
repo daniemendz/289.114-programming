@@ -88,8 +88,8 @@ if mouth == 0: #add white square if none detected
 #place drawings
 dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y = dEL_x-50,dEL_y-50, dER_x-50,dER_y-50, dM_x-50,dM_y-50
 
-imgELlist = ['dEL1.png','dEL2.png','dEL3.png']
-imgERlist = ['dER1.png','dER2.png','dER3.png']
+imgELlist = ['dEL1.png','dEL2.png']
+imgERlist = ['dER1.png','dER2.png']
 imgMlist = ['dM1.png','dM2.png','dM3.png','dM4.png']
 
 imgEL = loadImage(imgELlist[int(random(len(imgELlist)))])
@@ -100,3 +100,22 @@ image(imgER, dER_x,dER_y)
 
 imgM = loadImage(imgMlist[int(random(len(imgMlist)))])
 image(imgM, dM_x,dM_y)
+
+#border
+beginShape()
+fill(colour[colourPick])
+noStroke()
+vertex(0,0)
+vertex(0,600)
+vertex(600,600)
+vertex(600,0)
+vertex(0,0)
+#apple
+beginContour()
+vertex(100,100)
+vertex(500,100)
+vertex(500,500)
+vertex(100,500)
+vertex(100,100)
+endContour()
+endShape() 
