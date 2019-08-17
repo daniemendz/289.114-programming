@@ -1,7 +1,7 @@
 size(600,600)
 noStroke()
 
-colour = ['#ff9494', '#5efec3', '#63faea', '#7589ff', '#bfa3ff']
+colour = ['#ff8da0', '#55ffc1', '#3febff', '#6c87fe', '#c0a1ff']
 colourPick = int(random(len(colour)))
 bgcolour = ['#ffffff', colour[colourPick]]
 
