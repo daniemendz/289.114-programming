@@ -44,12 +44,12 @@ if lefteye == 0: #add white square if none detected
 
 #right eye position
 righteye = 0
-for i in range(8): #detects white squares
+for i in range(14): #detects white squares
     dER_xco = [350, 450]
     dER_yco = [150, 250]
     dER_x = dER_xco[int(random(0,2))]
     dER_y = dER_yco[int(random(0,2))]
-    detEyeRight = get(dER_x,dER_y)
+    detEyeRight = get(dER_x,dEL_y)
 
     if detEyeRight == -1:
         righteye += 1
@@ -59,7 +59,7 @@ if righteye == 0: #add white square if none detected
     dER_x = 450
     dER_y = 250
     fill('#ffffff')
-    rect(400,200, 100,100)
+    rect(400,dEL_y-50, 100,100)
     righteye += 1    
 
 
@@ -88,15 +88,15 @@ if mouth == 0: #add white square if none detected
 #place drawings
 dEL_x,dEL_y, dER_x,dER_y, dM_x,dM_y = dEL_x-50,dEL_y-50, dER_x-50,dER_y-50, dM_x-50,dM_y-50
 
-imgELlist = ['dEL1.png','dEL2.png']
-imgERlist = ['dER1.png','dER2.png']
+imgELlist = ['dEL1.png','dEL2.png','dEL3.png']
+imgERlist = ['dER1.png','dER2.png','dER3.png']
 imgMlist = ['dM1.png','dM2.png','dM3.png','dM4.png']
 
 imgEL = loadImage(imgELlist[int(random(len(imgELlist)))])
 image(imgEL, dEL_x,dEL_y)
 
 imgER = loadImage(imgERlist[int(random(len(imgERlist)))])
-image(imgER, dER_x,dER_y)
+image(imgER, dER_x,dEL_y)
 
 imgM = loadImage(imgMlist[int(random(len(imgMlist)))])
 image(imgM, dM_x,dM_y)
