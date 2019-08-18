@@ -9,7 +9,8 @@ bgcolour = ['#ffffff', colour[colourPick]]
 col = 0
 row = 0
 
-entry = csv[7].split('\t')
+aPick = int(random(1,30))
+entry = csv[aPick].split('\t')
 number = entry[0]
 name = entry[1]
 agency = entry[2]
@@ -17,6 +18,7 @@ eva = entry[3]
 time = entry[4]
 
 nameLen = len( name.replace(' ','').replace('.','') )
+
 
 for i in range(36):
     
