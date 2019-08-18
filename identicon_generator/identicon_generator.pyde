@@ -1,12 +1,22 @@
 size(600,600)
 noStroke()
 
+csv = loadStrings('spacewalk_records.csv')
 colour = ['#ff8da0', '#55ffc1', '#3febff', '#6c87fe', '#c0a1ff']
 colourPick = int(random(len(colour)))
 bgcolour = ['#ffffff', colour[colourPick]]
 
 col = 0
 row = 0
+
+entry = csv[7].split('\t')
+number = entry[0]
+name = entry[1]
+agency = entry[2]
+eva = entry[3]
+time = entry[4]
+
+nameLen = len( name.replace(' ','').replace('.','') )
 
 for i in range(36):
     
@@ -79,9 +89,9 @@ for i in range(20): #detects white squares
     
 if mouth == 0: #add white square if none detected
     dM_x = 250
-    dM_y = 450
+    dM_y = 350
     fill('#ffffff')
-    rect(200,400, 200,100)
+    rect(200,300, 200,100)
     mouth += 1
     
 
