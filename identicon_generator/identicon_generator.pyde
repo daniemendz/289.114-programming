@@ -8,7 +8,7 @@ col = 0
 row = 0
 
 aPick = int(random(1,30))
-entry = csv[aPick].split('\t')
+entry = csv[22].split('\t')
 number = int(entry[0])
 name = entry[1]
 agency = entry[2]
@@ -17,6 +17,7 @@ time = int(entry[4])
 
 nameLen = len( name.replace(' ','').replace('.','') )
 randseed = nameLen + eva + time - number
+print(number)
 
 if agency == 'NASA':
     randseed = randseed*time*2
