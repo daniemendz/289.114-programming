@@ -8,7 +8,7 @@ col = 0
 row = 0
 
 aPick = int(random(1,30))
-entry = csv[22].split('\t')
+entry = csv[aPick].split('\t')
 number = int(entry[0])
 name = entry[1]
 agency = entry[2]
@@ -24,7 +24,7 @@ if agency == 'NASA':
 else: 
     randseed = randseed/time
 
-
+randseed+= nameLen
     
 if number>24:
     colourPick = 4
