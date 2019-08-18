@@ -3,22 +3,46 @@ noStroke()
 
 csv = loadStrings('spacewalk_records.csv')
 colour = ['#ff8da0', '#55ffc1', '#3febff', '#6c87fe', '#c0a1ff']
-colourPick = int(random(len(colour)))
-bgcolour = ['#ffffff', colour[colourPick]]
 
 col = 0
 row = 0
 
 aPick = int(random(1,30))
-entry = csv[aPick].split('\t')
+entry = csv[19].split('\t')
 number = int(entry[0])
 name = entry[1]
 agency = entry[2]
 eva = int(entry[3])
 time = int(entry[4])
 
-
 nameLen = len( name.replace(' ','').replace('.','') )
+
+randseed = nameLen + eva + time - number
+
+if agency == 'NASA':
+    randseed = randseed*60
+else: 
+    randseed = randseed/6
+
+
+    
+if number>24:
+    colourPick = 4
+elif number>18:
+    colourPick = 3
+elif number>12:
+    colourPick = 2
+elif number>6:
+    colourPick = 1
+else:
+    colourPick = 0
+    
+
+randomSeed(randseed)
+
+
+bgcolour = ['#ffffff', colour[colourPick]]
+
 
 for i in range(36):
     
