@@ -156,3 +156,7 @@ vertex(100,500)
 vertex(100,100)
 endContour()
 endShape() 
+
+fill('#ffffff')
+textSize(25)
+text(name, 100,550)
