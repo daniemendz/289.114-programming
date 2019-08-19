@@ -1,12 +1,8 @@
 size(600,600)
 noStroke()
 
+#csv / pick user
 csv = loadStrings('spacewalk_records.csv')
-colour = ['#ff8da0', '#55ffc1', '#3febff', '#6c87fe', '#c0a1ff']
-
-col = 0
-row = 0
-
 aPick = int(random(1,30))
 entry = csv[aPick].split('\t')
 number = int(entry[0])
@@ -15,6 +11,7 @@ agency = entry[2]
 eva = int(entry[3])
 time = int(entry[4])
 
+#random seed 
 nameLen = len( name.replace(' ','').replace('.','') )
 randseed = nameLen + eva + time - number
 print(number)
@@ -25,8 +22,10 @@ if agency == 'NASA':
 else: 
     randseed = randseed/time
 
-randseed+= nameLen
-    
+randseed+= nameLen - number
+randomSeed(randseed)
+
+#pick colour
 if number>24:
     colourPick = 4
 elif number>18:
@@ -38,25 +37,20 @@ elif number>6:
 else:
     colourPick = 0
     
-
-randomSeed(randseed)
-
-
+colour = ['#ff8da0', '#55ffc1', '#3febff', '#6c87fe', '#c0a1ff']
 bgcolour = ['#ffffff', colour[colourPick]]
 
+col = 0
+row = 0
 
 for i in range(36):
-    
     bgcolPick = int(random(len(bgcolour)))
     fill(bgcolour[bgcolPick])
     rect(row*100,col*100, 100,100)
-    
     row += 1
-    
     if row%6==0:
         row = 0
         col += 1
-    
     
 #left eye position
 lefteye = 0
@@ -77,7 +71,6 @@ if lefteye == 0: #add white square if none detected
     fill('#ffffff')
     rect(100,200, 100,100)
     lefteye += 1
-
 
 #right eye position
 righteye = 0
@@ -145,7 +138,6 @@ vertex(0,600)
 vertex(600,600)
 vertex(600,0)
 vertex(0,0)
-#apple
 beginContour()
 vertex(100,100)
 vertex(500,100)
@@ -155,6 +147,7 @@ vertex(100,100)
 endContour()
 endShape() 
 
+#name
 fill('#ffffff')
 textSize(25)
 text(name, 100,550)
