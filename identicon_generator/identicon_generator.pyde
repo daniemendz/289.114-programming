@@ -18,6 +18,7 @@ time = int(entry[4])
 nameLen = len( name.replace(' ','').replace('.','') )
 randseed = nameLen + eva + time - number
 print(number)
+print(name)
 
 if agency == 'NASA':
     randseed = randseed*time*2
