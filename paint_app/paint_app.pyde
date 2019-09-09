@@ -17,6 +17,18 @@ paintmode = 'free'
 def mousePressed():
     if mouseButton == LEFT:
         loop() #starts running draw func
+    
+    global brushcolour, brushshape, brushsize
+    
+    if mouseX < 30:
+        if mouseY < 30:
+            brushcolour = rainbow[0]
+        elif mouseY < 60:
+            brushcolour = rainbow[1]
+        elif mouseY < 90:
+            brushcolour = rainbow[2]
+    
+    
 def mouseReleased():
     noLoop()
     global painting 
