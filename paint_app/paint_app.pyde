@@ -74,8 +74,7 @@ def draw():
             stroke(brushcolour)
             strokeCap(brushshape)
             strokeWeight(brushsize)
-            line(mouseX,mouseY, pmouseX,pmouseY)
-            
+            line(mouseX,mouseY, pmouseX,pmouseY)       
             
     # black panel
     noStroke()
