@@ -12,13 +12,14 @@ brushshape = ROUND
 brushsize = 4
 painting = False
 paintmode = 'free'
+clearall = False
 
 #stop start draw
 def mousePressed():
     if mouseButton == LEFT:
         loop() #starts running draw func
     
-    global brushcolour, brushshape, brushsize
+    global brushcolour, brushshape, brushsize, clearall
     
     if mouseX < 30:
         if mouseY < 30:
@@ -27,17 +28,43 @@ def mousePressed():
             brushcolour = rainbow[1]
         elif mouseY < 90:
             brushcolour = rainbow[2]
+    elif mouseX < 60:
+        if mouseY < 30:
+            brushcolour = rainbow[3]
+        elif mouseY < 60:
+            brushcolour = rainbow[4]
+        elif mouseY < 90:
+            brushcolour = rainbow[5]
     
+    if mouseY> height-30 and mouseX<60:
+        clearall = True
+        redraw()
     
 def mouseReleased():
     noLoop()
     global painting 
     painting = False
 
+def mouseWheel(e): # event, records
+    global brushsize, paintmode
+    
+    paintmode = 'select'
+    brushsize += e.count
+    if brushsize < 3:
+        brushsize = 3
+    if brushsize > 45:
+        brushsize = 45
+    
+    redraw()
 
 def draw():
-    global painting, paintmode
+    global painting, paintmode, brushsize
     print(frameCount)
+    
+    if mouseX < 60:
+        paintmode = 'select'
+    else:
+        paintmode = 'free'
     
     if paintmode == 'free':
         if not painting and frameCount>1:
@@ -62,3 +89,19 @@ def draw():
     fill(rainbow[3]); rect(30,0, 30,30)
     fill(rainbow[4]); rect(30,30, 30,30)
     fill(rainbow[5]); rect(30,60, 30,30)
+    
+    # brush preview
+    fill(brushcolour)
+    if brushshape == ROUND:
+        ellipse(30,123, brushsize,brushsize)
+    paintmode = 'free'
+    
+    #clear button
+    global clearall
+    fill('#FFFFFF')
+    text('clear', 10, height-12)
+    
+    if clearall:
+        fill('#004466')
+        rect(60,0,width, height)
+        clearall = False 
