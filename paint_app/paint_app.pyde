@@ -45,10 +45,12 @@ def mousePressed():
     if mouseX < 60:
         if mouseY < 170 and mouseY> 155:
             drawtool = True
-            print('draw')
+            eraser = False
+            print('d')
         elif mouseY < 190 and mouseY> 175:
-            erase = True
-            print('erase')
+            eraser = True
+            drawtool = False
+            print('e')
 
     
 def mouseReleased():
@@ -128,14 +130,16 @@ def draw():
     fill('#FFFFFF')
     text('erase', 10, 185)
     
-    if eraser:
+    if eraser == True:
         drawtool = False
+        print('erase')
         
     #draw button
     text('draw', 12, 165)
     
-    if drawtool:
+    if drawtool == True:
         eraser = False 
+        print('draw')
         
     # mouse cursor
     if brushsize < 15:
