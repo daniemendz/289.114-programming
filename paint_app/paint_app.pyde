@@ -111,9 +111,15 @@ def draw():
     fill(rainbow[5]); rect(30,60, 30,30)
     
     # brush preview
-    fill(brushcolour)
     if brushshape == ROUND:
+        if drawtool == True:
+            fill(brushcolour)
+        elif eraser == True:
+            fill('#000000')
+            stroke('#ffffff')
+            strokeWeight(1)
         ellipse(30,123, brushsize,brushsize)
+        noStroke()
     paintmode = 'free'
     
     #clear button
