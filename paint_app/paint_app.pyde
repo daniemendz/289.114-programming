@@ -13,14 +13,15 @@ brushsize = 4
 painting = False
 paintmode = 'free'
 clearall = False
-brush = 'draw'
+eraser = False
+drawtool = True
 
 #stop start draw
 def mousePressed():
     if mouseButton == LEFT:
         loop() #starts running draw func
     
-    global brushcolour, brushshape, brushsize, clearall
+    global brushcolour, brushshape, brushsize, clearall, eraser, drawtool
     
     if mouseX < 30:
         if mouseY < 30:
@@ -41,6 +42,15 @@ def mousePressed():
         clearall = True
         redraw()
     
+    if mouseX < 60:
+        if mouseY < 170 and mouseY> 155:
+            drawtool = True
+            print('draw')
+        elif mouseY < 190 and mouseY> 175:
+            erase = True
+            print('erase')
+
+    
 def mouseReleased():
     noLoop()
     global painting 
@@ -59,15 +69,14 @@ def mouseWheel(e): # event, records
     redraw()
 
 def draw():
-    global painting, paintmode, brushsize
-    print(frameCount)
+    global painting, paintmode, brushsize, eraser, drawtool
     
     if mouseX < 60:
         paintmode = 'select'
     else:
         paintmode = 'free'
     
-    if paintmode == 'free':
+    if paintmode == 'free' and drawtool == True:
         if not painting and frameCount>1:
             line(mouseX, mouseY, pmouseX, pmouseY)
             painting = True
@@ -76,8 +85,16 @@ def draw():
             strokeCap(brushshape)
             strokeWeight(brushsize)
             line(mouseX,mouseY, pmouseX,pmouseY)       
+    elif paintmode == 'free' and eraser == True:
+        if not painting and frameCount>1:
+            line(mouseX, mouseY, pmouseX, pmouseY)
+            painting = True
+        elif painting:
+            stroke('#004477')
+            strokeCap(brushshape)
+            strokeWeight(brushsize)
+            line(mouseX,mouseY, pmouseX,pmouseY)
     
-    print(paintmode)
     # black panel
     noStroke()
     fill('#000000')
@@ -103,9 +120,22 @@ def draw():
     text('clear', 10, height-12)
     
     if clearall:
-        fill('#004466')
+        fill('#004477')
         rect(60,0,width, height)
         clearall = False 
+        
+    #erase button
+    fill('#FFFFFF')
+    text('erase', 10, 185)
+    
+    if eraser:
+        drawtool = False
+        
+    #draw button
+    text('draw', 12, 165)
+    
+    if drawtool:
+        eraser = False 
         
     # mouse cursor
     if brushsize < 15:
