@@ -13,6 +13,7 @@ brushsize = 4
 painting = False
 paintmode = 'free'
 clearall = False
+brush = 'draw'
 
 #stop start draw
 def mousePressed():
@@ -75,7 +76,8 @@ def draw():
             strokeCap(brushshape)
             strokeWeight(brushsize)
             line(mouseX,mouseY, pmouseX,pmouseY)       
-            
+    
+    print(paintmode)
     # black panel
     noStroke()
     fill('#000000')
@@ -104,3 +106,11 @@ def draw():
         fill('#004466')
         rect(60,0,width, height)
         clearall = False 
+        
+    # mouse cursor
+    if brushsize < 15:
+        cursor(CROSS)
+    else:
+        mousecursor = loadImage('brush-cursor.png')
+        mousecursor.resize(brushsize, brushsize)
+        cursor(mousecursor)
