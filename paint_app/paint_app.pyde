@@ -15,13 +15,14 @@ paintmode = 'free'
 clearall = False
 eraser = False
 drawtool = True
+filltool = False
 
 #stop start draw
 def mousePressed():
     if mouseButton == LEFT:
         loop() #starts running draw func
     
-    global brushcolour, brushshape, brushsize, clearall, eraser, drawtool
+    global brushcolour, brushshape, brushsize, clearall, eraser, drawtool, filltool
     
     if mouseX < 30:
         if mouseY < 30:
@@ -51,6 +52,10 @@ def mousePressed():
             eraser = True
             drawtool = False
             print('e')
+        elif mouseY < 205 and mouseY> 195:
+            filltool = True
+            redraw()
+            print('f')
 
     
 def mouseReleased():
@@ -131,21 +136,32 @@ def draw():
         fill('#004477')
         rect(60,0,width, height)
         clearall = False 
-        
-    #erase button
-    fill('#FFFFFF')
-    text('erase', 10, 185)
     
+    #fill button
+    global filltool
+    fill('#ffffff')
+    text('fill', 14, 205)
+    
+    if filltool:
+        fill(brushcolour)
+        rect(60,0,width, height)
+        filltool = False 
+    
+    #erase button
     if eraser == True:
+        fill(brushcolour)
+        text('erase', 10, 185)
+        fill('#ffffff')
+        text('draw', 12, 165)
         drawtool = False
-        print('erase')
         
     #draw button
-    text('draw', 12, 165)
-    
     if drawtool == True:
+        fill('#ffffff')
+        text('erase', 10, 185)
+        fill(brushcolour)
+        text('draw', 12, 165)
         eraser = False 
-        print('draw')
         
     # mouse cursor
     if brushsize < 15:
