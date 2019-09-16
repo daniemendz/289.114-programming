@@ -13,14 +13,21 @@ def circle_(t):
     y = sin(t)
     return [x,y] #returning multiple values using array
 
+def lissajous(t, a, b, kx, ky):
+    x = a * cos(kx*t)
+    y = b * sin(ky*t)
+    return [x,y]
+        
+
 #globals
 x = -300.0
 y = 0.0
 t = 0.0    
+r = 100
 
 
 def draw():
-    global x,y,t
+    global x,y,t,r
     translate(width/2,height/2)
     stroke('#0099ff')
     line(width/2*-1,0, width/2,0)
@@ -33,11 +40,14 @@ def draw():
     y = parabola(x)
     point(x,y)
     x += 1
-    '''
-    
+
     #circle
     xy = circle_(t)
-    x = xy[0]
-    y = xy[1]
+    x = xy[0] * r
+    y = xy[1] * r
     point(x,y)
     t += 0.01
+    '''
+    
+    #lissajous
+    
