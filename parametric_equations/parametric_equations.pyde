@@ -13,7 +13,7 @@ def circle_(t):
     y = sin(t)
     return [x,y] #returning multiple values using array
 
-def lissajous(t, a, b, kx, ky):
+def lissajous(t, a,b, kx,ky):
     x = a * cos(kx*t)
     y = b * sin(ky*t)
     return [x,y]
@@ -50,4 +50,15 @@ def draw():
     '''
     
     #lissajous
+    xy = lissajous(t,100,100,3,2)
+    x = xy[0]
+    y = xy[1]
+    point(x,y)
+    t += 0.01
     
+    xy = lissajous(t,300,150,154,693)
+    stroke('#FF00000')
+    x = xy[0]
+    y = xy[1]
+    point(x,y)
+    t += 0.01
