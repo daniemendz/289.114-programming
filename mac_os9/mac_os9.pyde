@@ -18,6 +18,6 @@ def face(x,y, gap):
     
     #eyes
     line(x-gap/2,y/2, x-gap/2, y/2-10 )
-    line(x+gap/2,y/2, x+gap/2, y/2-10 )
+    line(x+gap*1.5,y/2, x+gap*1.5,y/2-10 )
     
 face(80,90, 30)
