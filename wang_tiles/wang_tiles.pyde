@@ -20,7 +20,6 @@ for i in range(1,400):
     #first square of next rows
     if i%19==0:
         detTop =  get(15,row+25) #detect colour
-        print(detTop)
         
         if detTop == -65536: #red
             pick = int(random(0,8))
@@ -47,7 +46,6 @@ for i in range(1,400):
     #remaining rows
     else:
         detTop =  get(col+15,row-5) #detect colour
-        print(detTop)
     
         if detTop == -65536 and det == -16737793: #red blue
             pick = (int(random(0,8))/2)*2
