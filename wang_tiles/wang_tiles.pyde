@@ -13,19 +13,20 @@ blue -16737793
 col = 0
 row = 0
 
-pick1 = int(random(0,16))
-firstimg = loadImage(imgArray[pick1])
-firstimg.resize(30, 30)
-image(firstimg, 0,0)
+for i in range(1,22):
+    
+    if i == 1:
+        pick = int(random(0,16))
+        img = loadImage(imgArray[pick])
+        img.resize(30,30)
+        image(img,col,row)
 
-for i in range(19):
     det = get(col+25,row+15)
     strokeWeight(2)
     stroke('#000000')
     point(col+25,row+15)
-    print(det)
-    col+=30
-    
+    col += 30
+
     if row == 0:
         if det == -16737793: # blue
             pick = (int(random(0,16))/2)*2
@@ -36,13 +37,32 @@ for i in range(19):
     else:
         random(2)
         
-    
-        
     img = loadImage(imgArray[pick])
     img.resize(30,30)
     image(img,col,row)
+    
+    if i%19==0:
+        detTop =  get(15,row+25)
+        strokeWeight(2)
+        stroke('#ffffff')
+        point(15,row+25)
+        print(detTop)
+        
+        if detTop == -65536: #red
+            pick = int(random(0,8))
+        else: #green
+            pick = int(random(8,16))
+            
+        row+=30
+        col = 0
+        img = loadImage(imgArray[pick])
+        img.resize(30,30)
+        image(img,col,row)
+        
 
-
+        
+    
+    
     
      
 
