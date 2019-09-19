@@ -16,8 +16,24 @@ for i in range(1,400):
         img = loadImage(imgArray[pick])
         img.resize(30,30)
         image(img,col,row)
+    
+    #first square of next rows
+    if i%19==0:
+        detTop =  get(15,row+25) #detect colour
+        print(detTop)
+        
+        if detTop == -65536: #red
+            pick = int(random(0,8))
+        else: #green
+            pick = int(random(8,16))
+            
+        row+=30
+        col = 0
+        img = loadImage(imgArray[pick])
+        img.resize(30,30)
+        image(img,col,row)
 
-    #detect side colour
+    #detect colour
     det = get(col+25,row+15)
     col += 30
     
@@ -30,7 +46,7 @@ for i in range(1,400):
     
     #remaining rows
     else:
-        detTop =  get(col+15,row-5)
+        detTop =  get(col+15,row-5) #detect colour
         print(detTop)
     
         if detTop == -65536 and det == -16737793: #red blue
@@ -46,21 +62,6 @@ for i in range(1,400):
     img.resize(30,30)
     image(img,col,row)
     
-    #first square of each row
-    if i%19==0:
-        detTop =  get(15,row+25)
-        print(detTop)
-        
-        if detTop == -65536: #red
-            pick = int(random(0,8))
-        else: #green
-            pick = int(random(8,16))
-            
-        row+=30
-        col = 0
-        img = loadImage(imgArray[pick])
-        img.resize(30,30)
-        image(img,col,row)
         
 
         
