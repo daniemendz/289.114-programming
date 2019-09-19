@@ -13,30 +13,38 @@ blue -16737793
 col = 0
 row = 0
 
-picker = int(random(0,16))
-firstimg = loadImage(imgArray[picker])
+pick1 = int(random(0,16))
+firstimg = loadImage(imgArray[pick1])
 firstimg.resize(30, 30)
 image(firstimg, 0,0)
 
-det1 = get(25,15)
-strokeWeight(2)
-stroke('#000000')
-point(25,15)
-print(det1)
-row +=30
-
-#for i in range(399):
-if det1 == -16737793: # blue
-    picker2 = (int(random(0,16))/2)*2
-    print(picker2)
-    img = loadImage(imgArray[picker2])
-    img.resize(30,30)
-    image(img,row,col)
+for i in range(20):
+    det1 = get(row+25,15)
+    strokeWeight(2)
+    stroke('#000000')
+    point(row+25,15)
+    print(det1)
+    row+=30
+        
+    if det1 == -16737793: # blue
+        pick = (int(random(0,16))/2)*2
+        print(pick)
+        img = loadImage(imgArray[pick])
+        img.resize(30,30)
+        image(img,row,col)
+    
+    elif det1 == -256: # yellow
+        pick = ((int(random(0,15))/2)*2)+1
+        print(pick)
+        img = loadImage(imgArray[pick])
+        img.resize(30,30)
+        image(img,row,col)
+    
     
 
-#row +=30
     
      
+
 
 
 '''
