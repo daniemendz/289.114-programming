@@ -53,16 +53,9 @@ for i in range(1,400):
             pick = ((int(random(8,15))/2)*2)+1
         elif detTop == -65536 and det == -256: #red yellow
             pick = ((int(random(0,7))/2)*2)+1
-        else:
+        else: #green blue
             pick = (int(random(8,16))/2)*2
     
     img = loadImage(imgArray[pick])
     img.resize(30,30)
     image(img,col,row)
-    
-        
-
-        
-    
-    
-    
