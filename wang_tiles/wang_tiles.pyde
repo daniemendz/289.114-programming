@@ -27,10 +27,10 @@ for i in range(19):
     col+=30
     
     if row == 0:
-        if det1 == -16737793: # blue
+        if det == -16737793: # blue
             pick = (int(random(0,16))/2)*2
         
-        elif det1 == -256: # yellow
+        elif det == -256: # yellow
             pick = ((int(random(0,15))/2)*2)+1
     
     else:
