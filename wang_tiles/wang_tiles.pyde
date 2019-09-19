@@ -35,7 +35,17 @@ for i in range(1,22):
             pick = ((int(random(0,15))/2)*2)+1
     
     else:
-        random(2)
+        detTop =  get(col+15,row-5)
+        strokeWeight(4)
+        stroke('#ffffff')
+        point(col+15,row-5)
+        print(detTop)
+    
+        if detTop == -65536 and det == -16737793: #red blue
+            pick = (int(random(0,8))/2)*2
+        elif detTop == -16711936 and det == -256: #green yellow
+            pick = ((int(random(8,15))/2)*2)+1
+        elif detTop == -65536 and det == -256:
         
     img = loadImage(imgArray[pick])
     img.resize(30,30)
