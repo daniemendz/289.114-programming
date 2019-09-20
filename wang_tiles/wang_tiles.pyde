@@ -18,7 +18,7 @@ for i in range(1,400):
         image(img,col,row)
     
     #first square of next rows
-    if i%19==0:
+    if i%20==0:
         detTop =  get(15,row+25) #detect colour
         
         if detTop == -65536: #red
