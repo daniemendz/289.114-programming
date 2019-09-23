@@ -5,7 +5,7 @@ def setup():
 
 amoebaa = []
 
-for i in range(60):
+for i in range(12):
     amoebaa.append(Amoeba(
         random(0,900), #x
         random(0,900), #y
@@ -20,8 +20,15 @@ def draw():
 
     for amoeba in amoebaa:
         #mouse attractor
-        mouse = PVector(mouseX, mouseY-amoeba/diameter/2)
+        mouse = PVector(mouseX, mouseY-amoeba.diameter/2)
         goto = PVector.sub(mouse, amoeba.location) #difference between vectors
+        goto.div(10000)
+        
+        if mousePressed:
+            goto.mult(-1)
+            
+        amoeba.velocity.add(goto)
+        amoeba.velocity.limit(0.8)
         
         amoeba.update()
     
