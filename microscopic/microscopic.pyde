@@ -3,15 +3,26 @@ from amoeba import Amoeba
 def setup():
     size(800,800)
 
+amoebaa = []
 
+for i in range(60):
+    amoebaa.append(Amoeba(
+        random(0,900), #x
+        random(0,900), #y
+        random(-0.5, 0.5), #xspeed
+        random(-0.5, 0.5), #yspeed
+        random(50,200) #diameter
+    ))
 
-a = Amoeba(300,200, 0.2,0.2, 150)
-b = Amoeba(100,100, 0.4, 0.5, 60)
 
 def draw():
     background('#004477')
-    
-    a.update()
-    b.update()
+
+    for amoeba in amoebaa:
+        #mouse attractor
+        mouse = PVector(mouseX, mouseY-amoeba/diameter/2)
+        goto = PVector.sub(mouse, amoeba.location) #difference between vectors
+        
+        amoeba.update()
     
     
