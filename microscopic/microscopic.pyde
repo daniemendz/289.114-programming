@@ -7,6 +7,13 @@ class Amoeba:
         self.velocity = PVector(xspeed, yspeed)
         self.diameter = float(diameter)
         self.wobbleradius = []
+        nucleusfills = ['#ff0000', '#ff9900', '#ffff00', '#00ff00', '#0099ff', '#6633ff']
+        self.nucleus = [
+            self.diameter/200*int(random(-5,5)), # y coord
+            self.diameter/random(1.5,2.5), #x coord
+            self.diameter/random(2.5,3), # width & height
+            nucleusfills[int(random(len(nucleusfills)))]
+        ]
         
         for i in range(4):
             self.wobbleradius.append( PVector(
@@ -22,6 +29,16 @@ class Amoeba:
         return [x,y]
         
     def update(self):
+        
+        # nucleus 
+        fill(self.nucleus[3])
+        noStroke()
+        ellipse(
+            self.location.x + self.nucleus[0],
+            self.location.y + self.nucleus[1],
+            self.nucleus[2], self.nucleus[2]
+        )
+        
         fill(0x880099ff)
         stroke('#ffffff')
         strokeWeight(3)
