@@ -1,3 +1,5 @@
+from amoeba import Amoeba
+
 def setup():
     size(800,800)
 
