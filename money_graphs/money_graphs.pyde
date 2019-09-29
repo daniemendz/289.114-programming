@@ -5,7 +5,7 @@ strokeWeight(3)
 
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 
-for i in range(140,240):
+for i in range(2,len(csv)):
     entry = csv[i].split(',')
     years = int(entry[2])-1500 #years
     publ = entry[3] #published
