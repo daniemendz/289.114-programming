@@ -5,7 +5,7 @@ strokeWeight(2)
 csv = loadStrings('temperature-anomaly.csv')
 count = 0
 
-h = -10
+h = 78
 colorMode(HSB,360,100,100,100)
 stroke(h,100,100,100)
 fill(h,100,100,100)
@@ -44,7 +44,7 @@ for i in range(30):
     graph()
     ty += 3
     tx -= 1
-    h += 3.7
+    h += 10
     stroke(h,100,100,100)
     fill(h,100,100,100)
 popMatrix()
