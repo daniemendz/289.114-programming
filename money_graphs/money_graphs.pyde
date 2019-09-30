@@ -6,13 +6,13 @@ strokeWeight(2)
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 count = 0
 
-h = 0
+h = 5
 colorMode(HSB,360,100,100,100)
 stroke(h,100,100,100)
 
 
 def graph():
-    for i in range(2,len(csv)): # draws graph
+    for i in range(150,400): # draws graph
         entry = csv[i].split(',')
         years = int(entry[2])-1500 #years
         publ = entry[3] #published
@@ -39,9 +39,9 @@ tx = 0
 for i in range(35):
     translate(tx,ty)
     graph()
-    ty += 1
+    ty += 0.8
     tx-= 1.5
-    h += 2
+    h += 1.6
     stroke(h,100,100,100)
     if h > 360:
         h = 0
