@@ -1,12 +1,12 @@
 size(800,400)
-background('#fdbf2d')
+background('#000000')
 stroke('#fd8024')
 strokeWeight(2)
 
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 count = 0
 
-h = 180
+h = 0
 colorMode(HSB,360,100,100,100)
 stroke(h,100,100,100)
 
@@ -29,17 +29,19 @@ def graph():
         px = (float(xscale)*float(years)) - 1140
         py = (float(yscale)*float(publ)) - 145
         
-        point(x,y)
+        vertex(x,y)
         line(x,y, px,py)
     
 graph()
 
 ty = 1
-for i in range(25):
-    translate(0,ty)
+tx = 0
+for i in range(35):
+    translate(tx,ty)
     graph()
     ty += 1
-    h += 5
+    tx-= 1.5
+    h += 2
     stroke(h,100,100,100)
     if h > 360:
         h = 0
