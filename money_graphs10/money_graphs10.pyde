@@ -17,18 +17,19 @@ def graph():
         entry = csv[i].split(',')
         years = int(entry[2]) - 1973 #years
         publ = entry[3] #published
-        yscale = float(height/0.1)/float(25)
-        xscale = float(width)/float(43)
+        yscale = float(height/0.05)/float(25)
+        xscale = float(width)/float(43) 
     
-        x = (float(xscale)*float(years))
-        y = (float(yscale)*float(publ))
+        x = (float(xscale)*float(years)) +650
+        y = (float(yscale)*float(publ))  -50
         
         prev = i - 1 
         entry = csv[prev].split(',')
         years = int(entry[2]) - 1973 #years
-        publ = entry[3] #published
-        px = (float(xscale)*float(years))
-        py = (float(yscale)*float(publ))
+        publ = entry[3] #published 
+        
+        px = (float(xscale)*float(years)) +650
+        py = (float(yscale)*float(publ))  -50
         
         vertex(x,y)
         line(x,y, px,py)
@@ -39,12 +40,12 @@ graph()
 ty = 1
 tx = 0
 pushMatrix()
-for i in range(30):
+for i in range(35):
     translate(tx,ty)
     graph()
-    ty += 3
+    ty += 2.7
     tx -= 1
-    h += 10
+    h += 8
     stroke(h,100,100,100)
     fill(h,100,100,100)
 popMatrix()
