@@ -5,7 +5,7 @@ strokeWeight(2)
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 count = 0
 
-h = 5
+h = 3
 fill('#000000')
 colorMode(HSB,360,100,100,100)
 stroke(h,100,100,100)
@@ -39,12 +39,10 @@ graph()
 
 ty = 1
 tx = 0
-for i in range(35):
+for i in range(45):
     translate(tx,ty)
     graph()
-    ty += 0.8
-    tx-= 1.5
-    h += 1.6
+    ty += 0.5
+    tx-= 0.5
+    h += 1.3
     stroke(h,100,100,100)
-    if h > 360:
-        h = 0
