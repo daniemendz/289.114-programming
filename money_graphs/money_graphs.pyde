@@ -5,14 +5,12 @@ strokeWeight(2)
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 count = 0
 
-h = -5
-fill('#000000')
+h = -10
 colorMode(HSB,360,100,100,100)
 stroke(h,100,100,100)
 fill(h,100,100,100)
 
 def graph():
-    
     beginShape()
     vertex(-10, 450)
     for i in range(100,400): # draws graph
