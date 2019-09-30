@@ -1,17 +1,19 @@
 size(800,400)
 background('#000000')
-stroke('#fd8024')
 strokeWeight(2)
 
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 count = 0
 
 h = 5
+fill('#000000')
 colorMode(HSB,360,100,100,100)
 stroke(h,100,100,100)
 
-
 def graph():
+    
+    beginShape()
+    vertex(-10, 450)
     for i in range(150,400): # draws graph
         entry = csv[i].split(',')
         years = int(entry[2])-1500 #years
@@ -31,7 +33,8 @@ def graph():
         
         vertex(x,y)
         line(x,y, px,py)
-    
+    vertex(850, 450)
+    endShape(CLOSE)
 graph()
 
 ty = 1
