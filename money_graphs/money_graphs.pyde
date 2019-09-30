@@ -38,6 +38,7 @@ graph()
 
 ty = 1
 tx = 0
+pushMatrix()
 for i in range(30):
     translate(tx,ty)
     graph()
@@ -46,3 +47,21 @@ for i in range(30):
     h += 3.7
     stroke(h,100,100,100)
     fill(h,100,100,100)
+popMatrix()
+
+fill(0xccffffff)
+noStroke()
+beginShape()
+vertex(0,0)
+vertex(800,0)
+vertex(800,400)
+vertex(0,400)
+vertex(0,0)
+beginContour()
+vertex(10,10)
+vertex(10, 390)
+vertex(600,390)
+vertex(600,10)
+vertex(10,10)
+endContour()
+endShape(CLOSE)
