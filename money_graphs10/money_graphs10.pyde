@@ -6,9 +6,9 @@ csv = loadStrings('temperature-anomaly.csv')
 count = 0
 
 h = 78
-colorMode(HSB,360,100,100,100)
-stroke(h,100,100,100)
+colorMode(HSB,360,150,10,93)
 fill(h,100,100,100)
+stroke(h,100,100,100)
 
 def graph():
     beginShape()
