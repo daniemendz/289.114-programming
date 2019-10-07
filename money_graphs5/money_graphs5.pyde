@@ -5,6 +5,7 @@ what = createFont("bro.ttf", 90)
 
 csv = loadStrings('the-number-of-new-book-titles-published.csv')
 count = 0
+img = loadImage('yellowseahorse.png')
 
 h = -10
 colorMode(HSB,360,100,100,100)
@@ -98,8 +99,13 @@ leaf(730,70,PI+(PI/2),'#FD8024')
 leaf(730,69,(5*PI)/3,'#FDA529')
 leaf(726,65,(11*PI)/6,'#FDBF2E')
 
+pushMatrix()
 textFont(what)
 translate(790,385)
 rotate(-PI/2)
 fill('#FDBF2E')
 text("5",0,0)
+popMatrix()
+
+img.resize(0,370)
+image(img,0,15)
