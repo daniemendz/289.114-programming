@@ -40,13 +40,17 @@ graph()
 ty = 1
 tx = 0
 pushMatrix()
+s = 22
+b = 150
 for i in range(35):
     translate(tx,ty)
     graph()
     ty += 2.7
     tx -= 1
     h += 8
-    fill(h, 60, 100)
+    fill(h, s, b)
+    s+=4
+    b-=7
 popMatrix()
 
 fill(0xccffffff)
