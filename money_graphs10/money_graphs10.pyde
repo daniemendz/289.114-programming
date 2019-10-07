@@ -4,6 +4,7 @@ strokeWeight(2)
 
 what = createFont("bro.ttf", 90)
 csv = loadStrings('temperature-anomaly.csv')
+img = loadImage('greenturtle.png')
 
 h = 78
 colorMode(HSB,360,100,100,100)
@@ -100,8 +101,13 @@ leaf(730,70,PI+(PI/2),'#407585')
 leaf(730,69,(5*PI)/3,'#48b78c')
 leaf(726,65,(11*PI)/6,'#dcf5a2')
 
+pushMatrix()
 textFont(what)
 translate(790,385)
 rotate(-PI/2)
 fill('#407585')
 text("10",0,0)
+popMatrix()
+
+img.resize(0,370)
+image(img,0,15)
