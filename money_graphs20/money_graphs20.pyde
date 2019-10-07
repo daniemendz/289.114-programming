@@ -4,7 +4,7 @@ strokeWeight(2)
 what = createFont("bro.ttf", 90)
 
 csv = loadStrings('temperature-anomaly.csv')
-count = 0
+img = loadImage('redshark.png')
 
 h = 357
 s = 99
@@ -103,8 +103,13 @@ leaf(730,70,PI+(PI/2),'#B61411')
 leaf(730,69,(5*PI)/3,'#F24A2D')
 leaf(726,65,(11*PI)/6,'#FF7B64')
 
+pushMatrix()
 textFont(what)
 translate(790,385)
 rotate(-PI/2)
 fill("#FF7B64")
 text("20",0,0)
+popMatrix()
+
+img.resize(0,370)
+image(img,0,15)
