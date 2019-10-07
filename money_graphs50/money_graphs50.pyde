@@ -3,35 +3,35 @@ background('#000000')
 strokeWeight(2)
 what = createFont("bro.ttf", 90)
 
-csv = loadStrings('temperature-anomaly.csv')
+csv = loadStrings('the-number-of-new-book-titles-published-2.csv')
 count = 0
 
-h = 357
-s = 99
-b = 38
+h = 228
+s = 87
+b = 48
 colorMode(HSB,360,100,100,100)
 stroke(h,s,b,100)
 fill(h,s,b,100)
 
 def graph():
     beginShape()
-    vertex(250, 380)
-    for i in range(70,170): # draws graph
+    vertex(-10, 450)
+    for i in range(20,250): # draws graph
         entry = csv[i].split(',')
-        years = int(entry[2])-1500 #year
+        years = int(entry[2])-1500 #years
         publ = entry[3] #published
         yscale = float(height/0.3)/float(2326)
         xscale = float(width)/float(100)
     
-        x = (float(xscale)*float(years)) - 2140
-        y = (float(yscale)*float(publ)) - 345
+        x = (float(xscale)*float(years)) - 1140
+        y = (float(yscale)*float(publ)) - 245
         
         prev = i - 1 
         entry = csv[prev].split(',')
         years = int(entry[2])-1500 #years
         publ = entry[3] #published
-        px = (float(xscale)*float(years)) - 2140
-        py = (float(yscale)*float(publ)) - 345
+        px = (float(xscale)*float(years)) - 1140
+        py = (float(yscale)*float(publ)) - 245
         
         vertex(x,y)
         line(x,y, px,py)
@@ -39,17 +39,18 @@ def graph():
     endShape(CLOSE)
 graph()
 
-ty = 85
-tx = -340
+ty = 21.2
+tx = 0
 pushMatrix()
 for i in range(35):
     translate(tx,ty)
     graph()
-    ty += 1
-    tx += 10
-    s -= 4.2
-    b += 11.2
-
+    ty += 2
+    tx -= 1
+    h += 4.7
+    s -= 0.2
+    b += 0.1
+    
     stroke(h,s,b,100)
     fill(h,s,b,100)
         
@@ -87,24 +88,24 @@ def leaf(x,y,angle,shade):
     endShape(CLOSE)
     popMatrix()
  
-leaf(730,60,0,'#940109')
-leaf(732,55,PI/6,'#B61411')
-leaf(737,57,PI/3,'#F24A2D')
+leaf(730,60,0,'#30107B')
+leaf(732,55,PI/6,'#6427B0')
+leaf(737,57,PI/3,'#D947B4')
 
-leaf(740,60,PI/2,'#FF7B64')
-leaf(743,62,(2*PI)/3,'#940109')
-leaf(745,63,(5*PI)/6,'#B61411')
+leaf(740,60,PI/2,'#A2E6EF')
+leaf(743,62,(2*PI)/3,'#30107B')
+leaf(745,63,(5*PI)/6,'#6427B0')
 
-leaf(740,70,PI,'#F24A2D')
-leaf(740,73,(7*PI)/6,'#FF7B64')
-leaf(735,74,(4*PI)/3,'#940109')
+leaf(740,70,PI,'#D947B4')
+leaf(740,73,(7*PI)/6,'#A2E6EF')
+leaf(735,74,(4*PI)/3,'#30107B')
 
-leaf(730,70,PI+(PI/2),'#B61411')
-leaf(730,69,(5*PI)/3,'#F24A2D')
-leaf(726,65,(11*PI)/6,'#FF7B64')
+leaf(730,70,PI+(PI/2),'#6427B0')
+leaf(730,69,(5*PI)/3,'#D947B4')
+leaf(726,65,(11*PI)/6,'#A2E6EF')
 
 textFont(what)
 translate(790,385)
 rotate(-PI/2)
-fill("#FF7B64")
-text("20",0,0)
+fill("#A2E6EF")
+text("50",0,0)
