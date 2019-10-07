@@ -1,5 +1,5 @@
 def setup():
-    size(600,600,P3D) #3d render, P2D 2d render
+    size(600,600,P3D) #3d render
     
 r = 0
 
@@ -20,12 +20,12 @@ def draw():
     #sphere(200) #radius
     r += 0.01
     
-    
+
     beginShape()
     vertex(-100, -100, -100)
     vertex( 100, -100, -100)
     vertex(   0,    0,  100)
-    
+
     vertex( 100, -100, -100)
     vertex( 100,  100, -100)
     vertex(   0,    0,  100)
@@ -38,5 +38,6 @@ def draw():
     vertex(-100, -100, -100)
     vertex(   0,    0,  100)
     endShape()
+
 
     box(40)
