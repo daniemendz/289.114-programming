@@ -7,6 +7,7 @@ def draw():
     global r
     background('#004477')
     stroke('#ffffff')
-    strokeWeight(3)
+    strokeWeight(1)
+    noFill()
     
-    rect(0,0,100,100)
+    sphere(200)
