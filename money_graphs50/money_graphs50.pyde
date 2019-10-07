@@ -4,7 +4,7 @@ strokeWeight(2)
 what = createFont("bro.ttf", 90)
 
 csv = loadStrings('the-number-of-new-book-titles-published-2.csv')
-count = 0
+img = loadImage('purplefish.png')
 
 h = 228
 s = 87
@@ -48,8 +48,8 @@ for i in range(35):
     ty += 2
     tx -= 1
     h += 4.7
-    s -= 0.2
-    b += 0.1
+    #s -= 0.2
+    b += 0.8
     
     stroke(h,s,b,100)
     fill(h,s,b,100)
@@ -91,21 +91,25 @@ def leaf(x,y,angle,shade):
 leaf(730,60,0,'#30107B')
 leaf(732,55,PI/6,'#6427B0')
 leaf(737,57,PI/3,'#D947B4')
-
 leaf(740,60,PI/2,'#A2E6EF')
+
 leaf(743,62,(2*PI)/3,'#30107B')
 leaf(745,63,(5*PI)/6,'#6427B0')
-
 leaf(740,70,PI,'#D947B4')
 leaf(740,73,(7*PI)/6,'#A2E6EF')
-leaf(735,74,(4*PI)/3,'#30107B')
 
+leaf(735,74,(4*PI)/3,'#30107B')
 leaf(730,70,PI+(PI/2),'#6427B0')
 leaf(730,69,(5*PI)/3,'#D947B4')
 leaf(726,65,(11*PI)/6,'#A2E6EF')
 
+pushMatrix()
 textFont(what)
 translate(790,385)
 rotate(-PI/2)
-fill("#A2E6EF")
+fill("#6427B0")
 text("50",0,0)
+popMatrix()
+
+img.resize(0,370)
+image(img,0,15)
