@@ -100,6 +100,21 @@ leaf(730,69,(5*PI)/3,'#FDA529')
 leaf(726,65,(11*PI)/6,'#FDBF2E')
 
 pushMatrix()
+translate(730,60)    
+rotate(0)
+fill('#FD5F22')
+
+beginShape()
+vertex(-6,7)
+vertex(-16,20)
+vertex(-50,5)
+vertex(-27,0)
+vertex(-22,4)
+endShape(CLOSE)
+popMatrix()
+
+
+pushMatrix()
 textFont(what)
 translate(790,385)
 rotate(-PI/2)
