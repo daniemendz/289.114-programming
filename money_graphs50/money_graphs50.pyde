@@ -5,6 +5,7 @@ what = createFont("bro.ttf", 90)
 
 csv = loadStrings('the-number-of-new-book-titles-published-2.csv')
 img = loadImage('purplefish.png')
+img2 = loadImage('fishdraw2.png')
 
 h = 228
 s = 87
@@ -125,6 +126,9 @@ rotate(-PI/2)
 fill("#6427B0")
 text("50",0,0)
 popMatrix()
+
+img2.resize(0,330)
+image(img2, 120,40)
 
 img.resize(0,370)
 image(img,0,-5)
