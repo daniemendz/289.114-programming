@@ -107,6 +107,7 @@ pushMatrix()
 translate(730,60)    
 rotate(0)
 fill('#30107B')
+
 beginShape()
 vertex(-6,7)
 vertex(-16,20)
@@ -115,6 +116,7 @@ vertex(-27,0)
 vertex(-22,4)
 endShape(CLOSE)
 popMatrix()
+
 
 pushMatrix()
 textFont(what)
@@ -125,4 +127,4 @@ text("50",0,0)
 popMatrix()
 
 img.resize(0,370)
-image(img,0,15)
+image(img,0,-5)

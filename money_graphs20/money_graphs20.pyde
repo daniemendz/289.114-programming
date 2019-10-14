@@ -13,47 +13,52 @@ colorMode(HSB,360,100,100,100)
 stroke(h,s,b,100)
 fill(h,s,b,100)
 
+pushMatrix()
+translate(-545,340)
+scale(0.7)
 def graph():
     beginShape()
     vertex(250, 380)
-    for i in range(70,170): # draws graph
+    for i in range(20,170): # draws graph
         entry = csv[i].split(',')
         years = int(entry[2])-1500 #year
-        publ = entry[3] #published
-        yscale = float(height/0.3)/float(2326)
+        publ = float(entry[3]) * 260 #published
+        yscale = float(height/0.3)/float(232)
         xscale = float(width)/float(100)
     
         x = (float(xscale)*float(years)) - 2140
-        y = (float(yscale)*float(publ)) - 345
+        y = (float(yscale)*float(publ)) - 545
         
         prev = i - 1 
         entry = csv[prev].split(',')
         years = int(entry[2])-1500 #years
-        publ = entry[3] #published
+        publ = float(entry[3]) * 260 #published
         px = (float(xscale)*float(years)) - 2140
-        py = (float(yscale)*float(publ)) - 345
+        py = (float(yscale)*float(publ)) - 545
         
         vertex(x,y)
         line(x,y, px,py)
-    vertex(850, 450)
+    vertex(8500, 450)
     endShape(CLOSE)
 graph()
 
-ty = 85
-tx = -340
+ty = 230
+tx = 0
 pushMatrix()
 for i in range(35):
     translate(tx,ty)
     graph()
-    ty += 1
-    tx += 10
-    s -= 4.2
-    b += 11.2
+    ty -= 10
+    tx += 0.5
+    s -= 3.5
+    b += 12.5
 
     stroke(h,s,b,100)
     fill(h,s,b,100)
         
 popMatrix()
+popMatrix()
+
 
 fill(0xccffffff)
 noStroke()

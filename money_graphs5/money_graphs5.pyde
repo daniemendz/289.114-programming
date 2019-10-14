@@ -122,5 +122,5 @@ fill('#FDBF2E')
 text("5",0,0)
 popMatrix()
 
-img.resize(0,370)
-image(img,0,15)
+img.resize(0,300)
+image(img,25,50)

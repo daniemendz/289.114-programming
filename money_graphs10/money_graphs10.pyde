@@ -105,6 +105,7 @@ pushMatrix()
 translate(730,60)    
 rotate(0)
 fill('#20416c')
+
 beginShape()
 vertex(-6,7)
 vertex(-16,20)
@@ -113,6 +114,7 @@ vertex(-27,0)
 vertex(-22,4)
 endShape(CLOSE)
 popMatrix()
+
 
 pushMatrix()
 textFont(what)
