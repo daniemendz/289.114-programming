@@ -5,6 +5,7 @@ what = createFont("bro.ttf", 90)
 
 csv = loadStrings('temperature-anomaly.csv')
 img = loadImage('redshark.png')
+img2 = loadImage('sharkdraw2.png')
 
 h = 357
 s = 99
@@ -130,6 +131,9 @@ rotate(-PI/2)
 fill("#FF7B64")
 text("20",0,0)
 popMatrix()
+
+img2.resize(0,237)
+image(img2, 15,97)
 
 img.resize(0,370)
 image(img,0,15)

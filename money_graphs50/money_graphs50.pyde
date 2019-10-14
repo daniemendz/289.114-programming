@@ -127,8 +127,8 @@ fill("#6427B0")
 text("50",0,0)
 popMatrix()
 
-img2.resize(0,330)
-image(img2, 120,40)
+img2.resize(0,310)
+image(img2, 135,50)
 
 img.resize(0,370)
 image(img,0,-5)
